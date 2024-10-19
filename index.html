@@ -9,18 +9,29 @@
     <h1 class="text-3xl font-bold text-red-800">THANK YOU!</h1>
     <p class="text-center">
       <strong>Thanks for helping us get out the vote</strong><br />
-      Click the button below to open your texting app with your selected template text<br />
+      Click the button below to open your texting app with your selected
+      template text<br />
       Just come back to this page to send more texts
     </p>
-    <a
-      href="sms:?&body="
-      id="action"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    >Open in Texting App</a></div>
+    <div class="flex gap-6">
+      <a
+        href="https://form.typeform.com/to/ilVoInBk?skipinfo=true"
+        class="bg-white-500 hover:bg-slate-200 text-slate-500 font-bold border border-slate-500 py-2 px-4 rounded"
+      >
+        Back to templates
+      </a>
+      <a
+        href="sms:?&body="
+        id="action"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Open in Texting App
+      </a>
+    </div>
     <script>
       const query = new URLSearchParams(window.location.search);
-      const body = query.get('body');
-      const action = document.getElementById('action');
+      const body = query.get("body");
+      const action = document.getElementById("action");
       action.href = `sms:?&body=${encodeURIComponent(body)}`;
     </script>
   </body>
