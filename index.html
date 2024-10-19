@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock the Vote Whidbey 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex flex-col gap-10 items-center justify-center h-screen">
+    <h1 class="text-3xl font-bold text-red-800">THANK YOU!</h1>
+    <p class="text-center">
+      <strong>Thanks for helping us get out the vote</strong><br />
+      Click the button below to open your texting app with your selected template text<br />
+      Just come back to this page to send more texts
+    </p>
+    <a
+      href="sms:?&body="
+      id="action"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >Open in Texting App</a></div>
+    <script>
+      const query = new URLSearchParams(window.location.search);
+      const body = query.get('body');
+      const action = document.getElementById('action');
+      action.href = `sms:?&body=${encodeURIComponent(body)}`;
+    </script>
+  </body>
+</html>
