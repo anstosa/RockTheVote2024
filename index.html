@@ -31,6 +31,8 @@
     <script>
       const query = new URLSearchParams(window.location.search);
       const body = query.get("body");
+      const bodyWithoutOtherOption = body.replace("Or write your own!", "<call to action>");
+      const bodyWithCallToAction = bodyWithoutOtherOption.replace("<call to action>", "There are 6 more days to register to vote free online https://olvr.votewa.gov/OLVR2024/landing.aspx");
       const action = document.getElementById("action");
       action.href = `sms:?&body=${encodeURIComponent(body)}`;
     </script>
